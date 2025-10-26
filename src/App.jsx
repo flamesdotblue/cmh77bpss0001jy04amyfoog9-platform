@@ -1,28 +1,29 @@
-import { useState } from 'react'
+import Hero from './components/Hero';
+import Skills from './components/Skills';
+import Certificates from './components/Certificates';
+import Impact from './components/Impact';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-neutral-950 text-neutral-100 font-inter">
+      <Hero />
+      <main className="relative z-10">
+        <Skills />
+        <Certificates />
+        <Impact />
+      </main>
+      <footer className="border-t border-neutral-800 bg-neutral-950/60 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/40">
+        <div className="max-w-7xl mx-auto px-6 py-8 text-sm text-neutral-400 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p>© {new Date().getFullYear()} Your Name — Cybersecurity & Ethical Hacking</p>
+          <div className="flex items-center gap-4">
+            <a href="#skills" className="hover:text-neutral-200 transition">Skills</a>
+            <a href="#certs" className="hover:text-neutral-200 transition">Certificates</a>
+            <a href="#impact" className="hover:text-neutral-200 transition">Achievements</a>
+          </div>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
